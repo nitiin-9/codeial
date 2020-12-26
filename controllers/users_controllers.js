@@ -31,7 +31,7 @@ module.exports.create = function (req,res) {
       if(err){console.log('error in finding user in signing up'); return }
       if(!user) {
          User.create(req.body, function(err,user){
-             if(err) {console.log('error in creating user while signing up'); return}
+             if(err) {console.log('error in creating user while signing up'); return;}
              return res.redirect('/users/sign-in');
          });
       }else {
@@ -42,6 +42,7 @@ module.exports.create = function (req,res) {
 }
 // sign in  and create a session for the user
 module.exports.createSession = function (req,res) {
-  //  to do later
-
+ return res.redirect('/');
 }
+// } u r welcome  pls resol okay
+//now its working..okay bro thanks
