@@ -13,7 +13,9 @@ const passport = require('passport');
      'local',
      {failureRedirect: '/users/sign-in'} 
 
- ),userController.createSession);
+ ),userController.createSession); 
+// apke m ye time lga rha tha itna ?. haan  ... it will shw the same thing..there?
+ router.get('/sign-out',userController.destroySession); 
 
 
 
