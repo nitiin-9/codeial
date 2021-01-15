@@ -1,6 +1,6 @@
  const mongoose = require('mongoose');
 
- const commentSchema = new mongoose.schema({
+const commentSchema = new mongoose.Schema({
      content : {
          type:String,
          required:true
@@ -22,5 +22,5 @@
      timestamps:true
  }); 
 
- const comment = mongoose.model('comment',commentSchema);
+ const comment = mongoose.model('Comment',commentSchema);
  module.exports = comment;
