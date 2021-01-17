@@ -16,6 +16,7 @@ module.exports.create = function(req, res){
                     return;
                 }
                 post.comments.push(comment);
+                
                 post.save();
 
                 res.redirect('/');
