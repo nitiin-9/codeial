@@ -7,7 +7,9 @@ const homeController = require('../controllers/home_controllers');
  router.get('/',homeController.home); 
  router.use('/users',require('./users')); 
  router.use('/posts', require('./posts')); 
- router.use('/comments', require('./comments'));
+ router.use('/comments', require('./comments')); 
+
+ router.use('/api' , require('./api'));
  // for any other further routes
  // router.use('/routerName', require('./routerFile));
 module.exports= router;
