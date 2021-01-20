@@ -17,8 +17,11 @@ const passport = require('passport');
 
  ),userController.createSession); 
 // apke m ye time lga rha tha itna ?. haan  ... it will shw the same thing..there?
- router.get('/sign-out',userController.destroySession); 
+ router.get('/sign-out',userController.destroySession);   
+
+router.get('/auth/google', passport.authenticate('google', {scope: ['profile', 'email']}));
+router.get('/auth/google/callback', passport.authenticate('google', {failureRedirect: '/users/sign-in'}), userController.createSession);
 
 
 
-     module.exports = router;
+ module.exports = router;
