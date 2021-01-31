@@ -11,9 +11,8 @@
      secure : false,
      auth : {
          user : 'nithinparipelli2324',
-         pass : 'N72869183810000'
+         pass : 
      }
-
 
  });
 
