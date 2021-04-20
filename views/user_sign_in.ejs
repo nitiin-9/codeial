@@ -1,9 +1,21 @@
+
+<link rel="stylesheet" type="" href="/css/user_sign_in.css">
 <h1> Sign In</h1> 
 
+<div id=sign-in-page>
+
 <form action ="/users/create-session" method="POST">
- 
+         <h2>Sign in</h2> 
+          <p id="google-sign-in">
+        <a href="/users/auth/google"><img src="/images/google.png" height="30" width="30"><span> Continue with Google</span></a>
+          </p>
+
  <input type ="email" name="email" placeholder="enter your email" required> 
  <input type ="password" name="password" placeholder="enter your password" required> 
  <input type ="submit" value="Sign In"> 
+    <p id="already-account"> 
+     <span>Don't have an account?</span> 
+    <a href="/users/sign-up">Sign Up</a>  
+    </div>
     
 </form>

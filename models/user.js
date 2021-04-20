@@ -20,7 +20,13 @@ const AVATAR_PATH = path.join('/uploads/users/avatars');
       },
       avatar : {
           type : String
-      }
+      },
+       friendships: [
+        { 
+            type: mongoose.Schema.Types.ObjectId,
+            ref: 'Friendship' 
+        }
+    ]
  }, {
      timestamps : true
  });   

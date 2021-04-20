@@ -1,23 +1,27 @@
 
 <link rel="stylesheet" href="/css/user_profile.css">
  
- <img src="<%= user.avatar%>" alt="<%= user.name%>" width="190">
- 
+ <div class="profile-section">
 
- <% if(user.id == profile_user.id) {%>
-   <!-- if user matches then show the form -->
-     <form action="/users/update/<%=profile_user.id%>"  enctype="multipart/form-data" method="POST">
-        <input type="text" name="name" placeholder="Your name" value="<%= profile_user.name%>" required> 
-        <input type="email" name="email" placeholder="Your email" value="<%= profile_user.email%>" required>  
-        <input type="file" name="avatar" value="" placeholder="Profile picture">
-        <input type="submit" name="" value="Update">
-
-     </form>
-
-
-  <!-- else show only profile info -->
-  <%} else {%> 
- <h1> <p><%=profile_user.name%></p> </h1>
- <h1>  <p><%=profile_user.email%></p>  </h1> 
-
-<%}%>
+      <!-- locals.user contains current logged in user  -->
+     <!-- user is here accessible bcoz of user.locals.user=req.user -->
+    <%  if(user.id==profile_user.id){  %>
+        
+         <img src="<%= user.avatar %>" alt="<%= user.name %>" width="200" height="200">
+         <!-- if user matches then show the form -->
+        <form action="/users/update/<%= profile_user._id%>" enctype="multipart/form-data" method="POST">
+            <input type="text" name="name" placeholder="Enter name" value="<%= profile_user.name %>" required>
+           
+            <input type="email" name="email" placeholder="Enter email" value="<%= profile_user.email %>" required>
+            <input type="file" name="avatar" placeholder="Profile Picture">
+            <input type="submit" value="Update">
+        </form>
+        </div>
+    <%  }else{ %>
+        <div class="profile-section">
+        <!-- else show only the profile info -->
+        <img src="<%= profile_user.avatar %>" alt="<%= profile_user.name %>" width="200" height="200">
+        <h1> Name : <%= profile_user.name%></h1>
+        <h1> Email : <%= profile_user.email%></h1>
+    <% } %>
+    </div>
